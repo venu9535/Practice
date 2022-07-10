@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - shell: date
+      register: date
+    - debug: var=date.stdout_lines

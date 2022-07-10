@@ -1,0 +1,13 @@
+---
+- name: package install
+  hosts: all
+  tasks:
+    - name: install_packages
+      apt:
+        name: apache2
+        state: present
+      become: yes
+    - command: systemctl status apache2
+      register: apache_service
+    - debug:
+           var: apache_service.stdout_lines

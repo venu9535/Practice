@@ -1,0 +1,6 @@
+---
+-hosts: all
+  tasks: 
+    -name: Disk usage of host machine
+     command: df -h
+  
